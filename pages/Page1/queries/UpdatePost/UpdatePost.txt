@@ -1,0 +1,11 @@
+UPDATE Posts
+SET 
+    Title = '{{this.params.Title}}',
+    Content = '{{this.params.Content}}',
+    UpdatedAt = GETDATE(),
+    Status = '{{this.params.Status}}',
+    PublishedAt = GETDATE(),
+    IsFeatured = '{{this.params.IsFeatured}}',
+    Tags = '{{this.Tags}}'
+WHERE 
+    PostID = '{{this.params.PostID}}';           
