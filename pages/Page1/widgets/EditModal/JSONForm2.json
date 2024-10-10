@@ -1,12 +1,12 @@
 {
   "animateLoading": true,
   "autoGenerateForm": true,
-  "backgroundColor": "#fff",
+  "backgroundColor": "#f4f4f5",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "1",
-  "bottomRow": 117,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "borderRadius": "0px",
+  "borderWidth": "0",
+  "bottomRow": 78,
+  "boxShadow": "none",
   "childStylesheet": {
     "ARRAY": {
       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -86,18 +86,6 @@
   },
   "disabledWhenInvalid": true,
   "dynamicBindingPathList": [
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
-      "key": "submitButtonStyles.buttonColor"
-    },
-    {
-      "key": "submitButtonStyles.borderRadius"
-    },
     {
       "key": "resetButtonStyles.buttonColor"
     },
@@ -220,6 +208,12 @@
     },
     {
       "key": "schema.__root_schema__.children.Content.accentColor"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "submitButtonStyles.borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -244,14 +238,14 @@
   "mobileRightColumn": 25,
   "mobileTopRow": 71,
   "needsErrorInfo": false,
-  "onSubmit": "{{UpdatePost.run(JSONForm2.formData).then(() => {\n  GetPosts.run();\n});\ncloseModal(EditModal.name);}}",
-  "originalBottomRow": 117,
+  "onSubmit": "{{UpdatePost.run(JSONForm2.formData).then(() => {\n  GetPosts.run();\n  showAlert('Updated post ' + JSONForm2.formData.PostID, 'success');\n});\ncloseModal(EditModal.name).then(() => {\n  closeModal(EditModal.name);\n});}}",
+  "originalBottomRow": 78,
   "originalTopRow": 5,
   "parentColumnSpace": 19.8125,
   "parentId": "6y0m81jb1e",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
-  "resetButtonLabel": "Reset",
+  "resetButtonLabel": "Cancel",
   "resetButtonStyles": {
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "boxShadow": "none",
@@ -305,7 +299,7 @@
           "isDisabled": false,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": true,
+          "isVisible": false,
           "label": "Category ID",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "CategoryID",
@@ -349,7 +343,7 @@
           "isDisabled": false,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": true,
+          "isVisible": false,
           "label": "Created At",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "CreatedAt",
@@ -413,7 +407,7 @@
           "isDisabled": false,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": true,
+          "isVisible": false,
           "label": "Published At",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "PublishedAt",
@@ -479,7 +473,7 @@
           "isDisabled": false,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": true,
+          "isVisible": false,
           "label": "Tags",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "Tags",
@@ -522,7 +516,7 @@
           "isDisabled": false,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": true,
+          "isVisible": false,
           "label": "Updated At",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "UpdatedAt",
@@ -558,6 +552,7 @@
     }
   },
   "scrollContents": true,
+  "shouldScrollContents": true,
   "showReset": true,
   "sourceData": "{{PostsTable.selectedRow}}",
   "submitButtonLabel": "Submit",
@@ -565,9 +560,11 @@
     "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
     "boxShadow": "none",
     "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-    "buttonVariant": "PRIMARY"
+    "buttonVariant": "PRIMARY",
+    "iconAlign": "left",
+    "placement": "CENTER"
   },
-  "title": "Form",
+  "title": "",
   "topRow": 5,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
