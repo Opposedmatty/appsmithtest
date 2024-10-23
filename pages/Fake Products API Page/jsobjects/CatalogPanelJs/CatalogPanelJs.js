@@ -4,7 +4,7 @@ export default {
 		console.log("set product modal", productDetails);
 		txt_title.setText(productDetails.title);
 		img_product.setImage(productDetails.image);
-		showModal('mdl_product');
+		showModal(mdl_product.name);
 	},
 
 	async onProductViewClick (itemId) {
