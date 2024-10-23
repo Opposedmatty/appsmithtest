@@ -8,6 +8,7 @@ export default {
 	},
 
 	async onProductViewClick (itemId) {
+		if(!itemId) return;
 		console.log("clicked item", itemId);
 
 		const params = {
