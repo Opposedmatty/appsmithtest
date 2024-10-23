@@ -23,6 +23,10 @@
     {
       "id": "Page1",
       "isDefault": true
+    },
+    {
+      "id": "Fake Products API Page",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

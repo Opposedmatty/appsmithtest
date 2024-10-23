@@ -1,11 +1,10 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 8,
+  "bottomRow": 4,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-  "buttonStyle": "PRIMARY",
-  "buttonVariant": "PRIMARY",
+  "buttonVariant": "TERTIARY",
   "dynamicBindingPathList": [
     {
       "key": "buttonColor"
@@ -14,26 +13,32 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicTriggerPathList": [],
-  "iconName": "book",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "cross",
+  "iconSize": 24,
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "2m98ib9blk",
-  "leftColumn": 42,
+  "key": "67jv7tjdda",
+  "leftColumn": 58,
   "minWidth": 50,
-  "mobileBottomRow": 10,
-  "mobileLeftColumn": 46,
-  "mobileRightColumn": 62,
-  "mobileTopRow": 2,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 58,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "parentId": "076ko2t5w2",
+  "onClick": "{{closeModal(mdl_product.name);}}",
+  "parentId": "kjzmgv3yac",
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
   "rightColumn": 64,
   "topRow": 0,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "z7da4vnrc6",
+  "widgetId": "rim9tf5ie3",
   "widgetName": "IconButton1"
 }

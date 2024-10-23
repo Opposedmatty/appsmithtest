@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "670593a9610d583ffe1186cd_6753e2f4-8e42-4e29-93d2-306258e1e64c",
+  "id": "Page1_userSession",
+  "unpublishedCollection": {
+    "name": "userSession",
+    "pageId": "Page1",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "userId",
+        "value": "'some-global-user-id-set-in-javascript-scope'"
+      }
+    ]
+  }
+}

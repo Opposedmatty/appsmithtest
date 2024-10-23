@@ -30,6 +30,8 @@
   "mobileRightColumn": 37,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
+  "originalBottomRow": 4,
+  "originalTopRow": 0,
   "overflow": "NONE",
   "parentId": "076ko2t5w2",
   "renderMode": "CANVAS",

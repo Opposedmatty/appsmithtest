@@ -1,5 +1,9 @@
 export default {
 
+	/**
+ * Represents a book.
+ * @constructor
+ */
 	async updatePostTitle (title) {
 		UpdatePost.run(
 			{
