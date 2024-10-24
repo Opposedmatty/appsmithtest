@@ -3,7 +3,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "",
-  "bottomRow": 208,
+  "bottomRow": 248,
   "boxShadow": "none",
   "defaultModel": "{{\n{\n\t\"title\": 'Products',\n\t\"currentPage\": 1,\n\t\"items\": GetProducts.data.products\n}\n}}",
   "dynamicBindingPathList": [
