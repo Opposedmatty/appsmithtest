@@ -11,7 +11,7 @@
       "colorStyle": "light",
       "logoAssetId": "",
       "logoConfiguration": "logoAndApplicationTitle",
-      "navStyle": "stacked",
+      "navStyle": "inline",
       "orientation": "top",
       "position": "static",
       "showNavbar": true,
@@ -31,11 +31,11 @@
   "pages": [
     {
       "id": "Page1",
-      "isDefault": false
+      "isDefault": true
     },
     {
       "id": "Fake Products API Page",
-      "isDefault": true
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
@@ -49,7 +49,7 @@
       "colorStyle": "light",
       "logoAssetId": "",
       "logoConfiguration": "logoAndApplicationTitle",
-      "navStyle": "stacked",
+      "navStyle": "inline",
       "orientation": "top",
       "position": "static",
       "showNavbar": true,
