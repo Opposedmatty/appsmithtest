@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "670593a9610d583ffe1186cd_716d0458-6d8d-4a6a-81f0-fb9fd752e56b",
+  "id": "Fake Products API Page_cart",
+  "unpublishedCollection": {
+    "name": "cart",
+    "pageId": "Fake Products API Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "cart",
+        "value": "[]"
+      }
+    ]
+  }
+}

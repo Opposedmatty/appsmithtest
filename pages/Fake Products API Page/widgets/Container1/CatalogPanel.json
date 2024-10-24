@@ -1,0 +1,93 @@
+{
+  "backgroundColor": "#ffffff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "",
+  "bottomRow": 208,
+  "boxShadow": "none",
+  "defaultModel": "{{\n{\n\t\"title\": 'Products',\n\t\"currentPage\": 1,\n\t\"items\": GetProducts.data.products\n}\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onItemClick"
+    },
+    {
+      "key": "onPageChange"
+    },
+    {
+      "key": "onAddToCart"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    },
+    {
+      "key": "onItemClick"
+    },
+    {
+      "key": "onPageChange"
+    },
+    {
+      "key": "onAddToCart"
+    }
+  ],
+  "events": [
+    "onResetClick",
+    "onItemClick",
+    "onPageChange",
+    "onAddToCart"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "b7wu1jrk0g",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 35,
+  "mobileLeftColumn": 3,
+  "mobileRightColumn": 26,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "onAddToCart": "{{cart.addItem(item)}}",
+  "onItemClick": "{{\n\ncatalogPanelJs.onProductViewClick(CatalogPanel.model.selectedItemId)}}",
+  "onPageChange": "{{catalogPanelJs.onPageChange(CatalogPanel.model.currentPage)}}",
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "originalBottomRow": 210,
+  "originalTopRow": 21,
+  "parentColumnSpace": 25.03125,
+  "parentId": "dspztvvihn",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": ".app {\n  bacgkround: transparent;\n  font-family: \"Roboto\";\n}\n.app .title {\n  font-size: 24px;\n  padding: 8px;\n  text-align: center;\n  margin-top: 16px;\n}\n.app .items-container {\n  padding: 24px;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n.app .item {\n  padding: 24px;\n  background: white;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  position: relative;\n  justify-content: center;\n  align-items: center;\n  width: 29%;\n  border: 1px solid #222;\n  flex-grow: 0;\n}\n.app .item .image {\n  display: block;\n  max-width: 200px;\n  max-height: 140px;\n  min-height: 140px;\n  width: auto;\n  height: auto;\n  position: relative;\n}\n.app .item .image img {\n  max-height: 100%;\n  max-width: 100%;\n  width: auto;\n  height: auto;\n}\n.app .item .price {\n  font-weight: 700;\n  font-size: 24px;\n  text-align: right;\n}\n.app .pagination {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 24px;\n  gap: 16px;\n}\n.app .buttons {\n  display: flex;\n  gap: 12px;\n}\n.app button {\n  background: #222;\n  color: white;\n  border-radius: 8px;\n  cursor: pointer;\n  padding: 8px;\n}\n.app button:hover {\n  opacity: 0.8;\n}",
+    "html": "<!-- no need to write html, head, body tags, it is handled by the widget -->\n<div id=\"root\"></div>\n",
+    "js": "import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm';\nimport reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm';\nfunction App() {\n  const [currentPage, setCurrentPage] = React.useState(appsmith.model.currentPage);\n  const onItemClick = item => {\n    appsmith.updateModel({\n      selectedItemId: item.id\n    });\n    appsmith.triggerEvent(\"onItemClick\", {\n      id: item?.id\n    });\n  };\n  const updatePage = newPage => {\n    console.log(newPage);\n    appsmith.updateModel({\n      currentPage: newPage\n    });\n    setCurrentPage(newPage);\n    appsmith.triggerEvent(\"onPageChange\", {\n      page: newPage\n    });\n  };\n  const addToCart = item => {\n    console.log(\"add to cart\", item);\n    appsmith.triggerEvent(\"onAddToCart\", {\n      item: item\n    });\n  };\n  const RenderItem = item => {\n    return /*#__PURE__*/React.createElement(\"div\", {\n      class: \"item\"\n    }, /*#__PURE__*/React.createElement(\"div\", null, item.title), /*#__PURE__*/React.createElement(\"div\", {\n      class: \"image\"\n    }, /*#__PURE__*/React.createElement(\"img\", {\n      src: item.thumbnail\n    })), /*#__PURE__*/React.createElement(\"div\", {\n      class: \"price\"\n    }, \"\\xA3\", item.price), /*#__PURE__*/React.createElement(\"div\", {\n      class: \"buttons\"\n    }, /*#__PURE__*/React.createElement(\"button\", {\n      type: \"button\",\n      onClick: () => onItemClick(item)\n    }, \"View\"), /*#__PURE__*/React.createElement(\"button\", {\n      type: \"button\",\n      onClick: () => addToCart(item)\n    }, \"Add to cart\")));\n  };\n  return /*#__PURE__*/React.createElement(\"div\", {\n    class: \"app\"\n  }, /*#__PURE__*/React.createElement(\"div\", {\n    class: \"title\"\n  }, appsmith.model.title), /*#__PURE__*/React.createElement(\"div\", {\n    class: \"items-container\"\n  }, appsmith.model.items.map(RenderItem)), /*#__PURE__*/React.createElement(\"div\", {\n    class: \"pagination\"\n  }, /*#__PURE__*/React.createElement(\"button\", {\n    onClick: () => updatePage(currentPage - 1)\n  }, '<'), currentPage + 1, /*#__PURE__*/React.createElement(\"button\", {\n    onClick: () => updatePage(currentPage + 1)\n  }, '>')));\n}\nappsmith.onReady(() => {\n  reactDom.render( /*#__PURE__*/React.createElement(App, null), document.getElementById(\"root\"));\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 19,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": ".app {\n\tbacgkround: transparent;\n\tfont-family: 'Roboto';\n\n\t.title {\n\t\tfont-size\t: 24px;\n\t\tpadding: 8px;\n\t\ttext-align: center;\n\t\tmargin-top: 16px;\n\t}\n\t.items-container {\n\t\tpadding: 24px;\n\t\tdisplay: flex;\n\t\tflex-direction: row;\n\t\tflex-wrap: wrap;\n\t\tgap: 8px;\n\n\t}\n\n\t.item {\n\t\tpadding: 24px;\n\t\tbackground: white;\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\tgap: 16px;\n\t\tposition: relative;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\twidth: 29%;\n\t\tborder: 1px solid #222;\n\t\tflex-grow: 0;\n\n\t\t.image {\n\t\t\tdisplay: block;\n\t\t\tmax-width:200px;\n\t\t\tmax-height: 140px;\n\t\t\tmin-height: 140px;\n\t\t\twidth: auto;\n\t\t\theight: auto;\n\t\t\tposition: relative;\n\n\t\t\timg {\n\t\t\t\tmax-height: 100%;\n\t\t\t\tmax-width: 100%;\n\t\t\t\twidth: auto;\n\t\t\t\theight: auto;\n\t\t\t}\n\t\t}\n\n\t\t\n\n\t\t.price {\n\t\t\tfont-weight: 700;\n\t\t\tfont-size: 24px;\n\t\t\ttext-align: right;\n\t\t}\n\t}\n\t\n\t.pagination\n\t{\n\t\tdisplay:flex;\n\t\tjustify-content:center;\n\t\talign-items: center;\n\t\tpadding: 24px;\n\t\tgap: 16px;\n\t}\n\t\n\t.buttons {\n\t\tdisplay: flex;\n\t\tgap: 12px;\n\t}\n\t\n\tbutton {\n\t\t\tbackground: #222;\n\t\t\tcolor: white;\n\t\t\tborder-radius: 8px;\n\t\t\tcursor: pointer;\n\t\t\tpadding: 8px;\n\n\t\t\t&:hover {\n\t\t\t\topacity: 0.8;\n\t\t\t}\n\t\t}\n}\n",
+    "html": "<!-- no need to write html, head, body tags, it is handled by the widget -->\n<div id=\"root\"></div>\n",
+    "js": "import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm'\nimport reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'\n\nfunction App() {\n\n\tconst [currentPage, setCurrentPage] = React.useState(appsmith.model.currentPage);\n\tconst onItemClick = (item) => {\n\t\tappsmith.updateModel({ selectedItemId: item.id });\n\t\tappsmith.triggerEvent(\"onItemClick\", { id: item?.id });\n\t}\n\n\n\tconst updatePage = (newPage) => {\n\t\tconsole.log(newPage);\n\t\tappsmith.updateModel({ currentPage: newPage });\n\t\tsetCurrentPage(newPage);\n\t\tappsmith.triggerEvent(\"onPageChange\", { page: newPage });\n\t}\n\n\tconst addToCart = (item) => {\n\t\tconsole.log(\"add to cart\", item);\n\t\tappsmith.triggerEvent(\"onAddToCart\", { item: item });\n\t}\n\n\n\tconst RenderItem = (item) => {\n\t\treturn (\n\t\t\t<div class=\"item\">\n\t\t\t<div>{item.title}</div>\n\t<div class=\"image\">\n\t\t<img src={item.thumbnail} />\n\t\t\t</div>\n\t<div class=\"price\">£{item.price}</div>\n\t<div class=\"buttons\">\t\n\t\t<button type=\"button\" onClick={()=> onItemClick(item)}>View</button>\n<button type=\"button\" onClick={()=> addToCart(item)}>Add to cart</button>\n\n</div>\n\n</div>\n)\n}\n\n\nreturn (\n\t<div class=\"app\"> \n\t<div class=\"title\">{appsmith.model.title}</div>\n<div class=\"items-container\">\n\t{appsmith.model.items.map(RenderItem)}\n\t\t</div>\n\n<div class='pagination'>\n\t<button onClick={() => updatePage(currentPage - 1)}>{'<'}</button>\n{currentPage + 1}\n<button onClick={() => updatePage(currentPage + 1)}>{'>'}</button>\n</div>\n</div>\n\n);\n}\n\nappsmith.onReady(() => {\n\treactDom.render(\n\t\t<App />, document.getElementById(\"root\"));\n});"
+  },
+  "version": 1,
+  "widgetId": "8h9kkiduey",
+  "widgetName": "CatalogPanel"
+}

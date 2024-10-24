@@ -1,0 +1,65 @@
+{
+  "backgroundColor": "#ffffff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "0px",
+  "borderWidth": "1",
+  "bottomRow": 15,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "defaultModel": "{{\n{\n  \"items\": cart.cart\n}\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [
+    {
+      "key": "onResetClick"
+    }
+  ],
+  "events": [
+    "onResetClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "pbqp4td1e5",
+  "leftColumn": 57,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 35,
+  "mobileLeftColumn": 41,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "onResetClick": "{{showAlert('Successfully reset!!', '');}}",
+  "parentColumnSpace": 29.78125,
+  "parentId": "dspztvvihn",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": ".app {\n  font-family: \"Roboto\";\n  padding: 8px;\n}\n.app .total {\n  margin-bottom: 4px;\n}\n.app .cart {\n  font-size: 32px;\n}",
+    "html": "<!-- no need to write html, head, body tags, it is handled by the widget -->\n<div id=\"root\"></div>\n",
+    "js": "import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm';\nimport reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm';\nfunction App() {\n  const [items, setItems] = React.useState(appsmith.model.items);\n  const [cartTotal, setCartTotal] = React.useState(0);\n  React.useEffect(() => {\n    const unlisten = appsmith.onModelChange(newModel => {\n      console.log(\"model updated\", newModel);\n      setItems(newModel.items);\n      const newCartTotal = newModel.items.reduce((acc, curr) => {\n        return acc + curr.price;\n      }, 0);\n      setCartTotal(Math.round(newCartTotal * 100) / 100);\n    });\n    return () => unlisten();\n  }, []);\n  return /*#__PURE__*/React.createElement(\"div\", {\n    class: \"app\"\n  }, /*#__PURE__*/React.createElement(\"div\", {\n    class: \"total\"\n  }, \"Total\"), /*#__PURE__*/React.createElement(\"div\", {\n    class: \"cart\"\n  }, \"\\xA3\", cartTotal), /*#__PURE__*/React.createElement(\"div\", null, items.length, \" items\"));\n}\nappsmith.onReady(() => {\n  reactDom.render( /*#__PURE__*/React.createElement(App, null), document.getElementById(\"root\"));\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 5,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": ".app {\n\tfont-family: 'Roboto';\n\tpadding: 8px;\n\t.total {\n\t\tmargin-bottom: 4px;\n\t}\n\t.cart {\n\n\t\tfont-size: 32px;\n\t}\n}\n",
+    "html": "<!-- no need to write html, head, body tags, it is handled by the widget -->\n<div id=\"root\"></div>\n",
+    "js": "import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm'\nimport reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'\n\nfunction App() {\n\tconst [items, setItems] = React.useState(appsmith.model.items);\n\tconst [cartTotal, setCartTotal] = React.useState(0);\n\n\tReact.useEffect(() => {\n\t\tconst unlisten = appsmith.onModelChange(newModel => {\n\t\t\tconsole.log(\"model updated\", newModel);\n\t\t\tsetItems(newModel.items);\n\t\t\tconst newCartTotal = newModel.items.reduce((acc, curr) => {\n\t\t\t\treturn acc + curr.price;\n\t\t\t}, 0)\n\t\t\tsetCartTotal(Math.round(newCartTotal * 100) / 100);\n\t\t});\n\n\t\treturn () => unlisten();\n\t},[])\n\t\n\t\n\n\n\n\treturn (\n\t\t<div class=\"app\">\n\t\t<div class=\"total\">Total</div>\n\t\t<div class=\"cart\">£{cartTotal}</div>\n\t\t<div>{items.length} items</div>\n</div>\n);\n}\n\nappsmith.onReady(() => {\n\treactDom.render(<App />, document.getElementById(\"root\"));\n});"
+  },
+  "version": 1,
+  "widgetId": "ln65rhgifa",
+  "widgetName": "Cart"
+}
