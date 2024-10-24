@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "670593a9610d583ffe1186cd_d3af30f5-567e-4f32-84ec-c9e4efed7427",
+  "id": "Fake Products API Page_actions",
+  "unpublishedCollection": {
+    "name": "actions",
+    "pageId": "Fake Products API Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
