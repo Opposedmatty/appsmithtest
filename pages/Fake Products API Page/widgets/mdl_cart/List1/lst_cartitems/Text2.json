@@ -41,7 +41,7 @@
   "parentId": "psbdhbxw6z",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 56,
+  "rightColumn": 51,
   "shouldTruncate": false,
   "text": "{{currentItem.title}}",
   "textAlign": "LEFT",
