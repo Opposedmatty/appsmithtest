@@ -9,6 +9,9 @@ export default {
 		const newCart = [...currentCart, item];
 		storeValue('cart', newCart);
 		this.cart = newCart;
+
+		const addCartString = `Added item : ${item.title}`;
+		showAlert(addCartString, "success");
 	},
 	async showCart () {
 		showModal(mdl_cart.name);

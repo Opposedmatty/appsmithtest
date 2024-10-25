@@ -109,7 +109,7 @@
   "parentColumnSpace": 6.9375,
   "parentId": "x4oq8kwu6v",
   "parentRowSpace": 10,
-  "primaryKeys": "{{List1.listData.map((currentItem, currentIndex) =>currentIndex )}}",
+  "primaryKeys": "{{lst_cart.listData.map((currentItem, currentIndex) =>currentIndex )}}",
   "renderMode": "CANVAS",
   "requiresFlatWidgetChildren": true,
   "responsiveBehavior": "fill",
@@ -120,5 +120,5 @@
   "triggeredItemView": "{{{}}}",
   "type": "LIST_WIDGET_V2",
   "widgetId": "qfrymjs24w",
-  "widgetName": "List1"
+  "widgetName": "lst_cart"
 }
