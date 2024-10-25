@@ -49,7 +49,7 @@
         "key": "queryParameters[1].value"
       }
     ],
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "name": "GetProducts",
     "pageId": "Fake Products API Page",
     "userSetOnLoad": true
