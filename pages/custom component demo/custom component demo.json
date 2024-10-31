@@ -1,23 +1,23 @@
 {
-  "gitSyncId": "670593a9610d583ffe1186cd_995f2440-d40b-494f-a583-14026293e5ae",
+  "gitSyncId": "670593a9610d583ffe1186cd_76fd7022-7d8a-48e0-84b0-9908f6ea7b4a",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 3160,
+          "bottomRow": 380,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
           "dynamicBindingPathList": [],
           "leftColumn": 0,
-          "minHeight": 1060,
+          "minHeight": 1070,
           "parentColumnSpace": 1,
           "parentRowSpace": 1,
           "rightColumn": 1224,
           "snapColumns": 64,
-          "snapRows": 104,
+          "snapRows": 105,
           "topRow": 0,
           "type": "CANVAS_WIDGET",
           "version": 90,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "Fake Products API Page",
-    "slug": "fake-products-api-page"
+    "name": "custom component demo",
+    "slug": "custom-component-demo"
   }
 }

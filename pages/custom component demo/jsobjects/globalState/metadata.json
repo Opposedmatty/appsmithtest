@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "670593a9610d583ffe1186cd_c6d2a396-ad1c-4e0c-b163-48f5cff6f949",
+  "id": "custom component demo_globalState",
+  "unpublishedCollection": {
+    "name": "globalState",
+    "pageId": "custom component demo",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "currentCount",
+        "value": "0"
+      }
+    ]
+  }
+}

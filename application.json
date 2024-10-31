@@ -36,6 +36,10 @@
     {
       "id": "Fake Products API Page",
       "isDefault": false
+    },
+    {
+      "id": "custom component demo",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

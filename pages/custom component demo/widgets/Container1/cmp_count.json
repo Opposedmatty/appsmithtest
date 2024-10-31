@@ -1,0 +1,72 @@
+{
+  "backgroundColor": "",
+  "borderColor": "#18181b",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "0",
+  "bottomRow": 15,
+  "boxShadow": "none",
+  "defaultModel": "{{\n{\n\t\"count\": globalState.currentCount,\n}\n}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "theme"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultModel"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "backgroundColor"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onCountClick"
+    }
+  ],
+  "events": [
+    "onCountClick"
+  ],
+  "isCanvas": false,
+  "isLoading": false,
+  "isSearchWildcard": true,
+  "isVisible": true,
+  "key": "9l07ksawdt",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 13,
+  "mobileRightColumn": 36,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onCountClick": "{{globalState.onCountClick(currentCount);\nshowAlert('Count updated : ' + currentCount, 'success');}}",
+  "originalBottomRow": 16,
+  "originalTopRow": 0,
+  "parentColumnSpace": 8.542882204055786,
+  "parentId": "dz7iixpqdp",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "srcDoc": {
+    "css": ".app {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 8px;\n}\n.app .count {\n  font-family: \"Roboto\";\n  font-size: 72px;\n  color: var(--appsmith-theme-primaryColor);\n  padding: 12px;\n  border-radius: 100%;\n  background: var(--appsmith-theme-backgroundColor);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  aspect: 1/1;\n  width: 100px;\n  height: 100px;\n  border: var(--appsmith-theme-borderWidth) solid var(--appsmith-theme-primaryColor);\n  cursor: pointer;\n}\n.app .count:hover {\n  opacity: 0.8;\n}",
+    "html": "<!-- no need to write html, head, body tags, it is handled by the widget -->\n<div id=\"root\"></div>\n",
+    "js": "import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm';\nimport reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm';\nfunction App() {\n  const [count, setCount] = React.useState(appsmith.model.count || 0);\n  React.useEffect(() => {\n    const unlisten = appsmith.onModelChange(updatedModel => {\n      setCount(updatedModel.count);\n    });\n    return () => unlisten();\n  }, []);\n  const onCountClick = () => {\n    const newCount = count + 1;\n    setCount(newCount);\n    appsmith.model.count = newCount;\n    appsmith.triggerEvent('onCountClick', {\n      currentCount: newCount\n    });\n  };\n  return /*#__PURE__*/React.createElement(\"div\", {\n    class: \"app\"\n  }, /*#__PURE__*/React.createElement(\"div\", {\n    class: \"count\",\n    onClick: onCountClick\n  }, count));\n}\nappsmith.onReady(() => {\n  reactDom.render( /*#__PURE__*/React.createElement(App, null), document.getElementById(\"root\"));\n});"
+  },
+  "theme": "{{appsmith.theme}}",
+  "topRow": 0,
+  "type": "CUSTOM_WIDGET",
+  "uncompiledSrcDoc": {
+    "css": ".app {\n\tdisplay:flex;\n\tjustify-content: center;\n\talign-items: center;\n\tpadding: 8px;\n\n\t.count {\n\t\tfont-family : 'Roboto';\n\t\tfont-size: 72px;\n\t\tcolor: var(--appsmith-theme-primaryColor);\n\t\tpadding: 12px;\n\t\tborder-radius: 100%;\n\t\tbackground: var(--appsmith-theme-backgroundColor);\n\t\tdisplay:flex;\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t\taspect: 1/1;\n\t\twidth:100px;\n\t\theight: 100px;\n\t\tborder: var(--appsmith-theme-borderWidth) solid var(--appsmith-theme-primaryColor);\n\t\tcursor:pointer;\n\t\t\n\t\t&:hover {\n\t\t\topacity:0.8;\n\t\t}\n\t}\n}",
+    "html": "<!-- no need to write html, head, body tags, it is handled by the widget -->\n<div id=\"root\"></div>\n",
+    "js": "import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm'\nimport reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'\n\nfunction App() {\n\tconst [count, setCount] = React.useState(appsmith.model.count || 0);\n\n\tReact.useEffect(() => {\n\t\tconst unlisten = appsmith.onModelChange(updatedModel => {\n\t\t\tsetCount(updatedModel.count);\n\t\t});\n\t\treturn () => unlisten();\n\t},[])\n\n\tconst onCountClick = () => {\n\t\tconst newCount = count + 1;\n\t\tsetCount(newCount);\n\t\tappsmith.model.count = newCount;\n\t\tappsmith.triggerEvent('onCountClick', { currentCount: newCount });\n\t}\n\n\treturn (\n\t\t<div class='app'>\n\t\t<div class='count' onClick={onCountClick}>{count}</div>\n</div>\n);\n}\n\nappsmith.onReady(() => {\n\treactDom.render(<App />, document.getElementById(\"root\"));\n});"
+  },
+  "version": 1,
+  "widgetId": "ip8ctwinm2",
+  "widgetName": "cmp_count"
+}
